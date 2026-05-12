@@ -1,0 +1,15 @@
+# Create a simple logo file - run this script once to generate logo.png
+import base64
+from PIL import Image
+import io
+
+logo_data = "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpUUqDnYQcchQnSyIijhKFYtgobQVWnUwufQLmjQkKS6OgmvBwY/FqoOLs64OroIg+AHi5uak6CIl/i8ptIjx4Lgf7+497t4BQr3MNKtrAtB020wlY2I2tyoGXxGFgAD6MYOYZZnjzDQFz/F1Dw9f7yI8y/vcn6NXLZgM8InEs8wwbWIN4jFattPh94hjqigsIn4iTjXoguKXossuv3IuuMzzq0Z2ObtILBGbzA5Yk1iBLNS0Bcm9mquK5Y+Yr5llkc75JsYjdpmVME+OLLlH7U2yBcTbQUmXrDLFYYpYQCnKkKGBhtp1WvK7+JbPXyKRV04yKDGGLWqQoEd+/oM/2boF80d2qwXFzpV3gP/tQFdruu4MqLseoL1tuPGnwM3pVvf4PzDQzVfGcQOEpsDLdZVlr4DeA+Cy67JmX+TYAdC/DK73NdeaROA8AJoAAEn3NcIhbS8AAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAAd0SU1FB+cFDAc2Kj6nT5EAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA3UlEQVR42u2aMQ6AIAxF6R2M6WqWXkUSJ01oB+gjQCD+YJI2YBrSGgKBQCAQCAQCgUBwWxXgXfUUGWAG6p51AdrTAI2kgY00sIEGNtDABhp4poG2V0CbKugMDWylgR1pYFca2JUGdqWBXWlgVxp4iQZ2pdmoPc/j+zMi27ZxHAccx8F1HRCJRAKBQCAQCAQCgUAg+JeA54mdtv2AiIj3+6UNYJomx3E8tQFel7K2bU9tAChLAmiaBk3TcBwHjDFM08QYs/8DAoFAIBAIBALBb0DeK3dJTEu8vxsAAAAASUVORK5CYII="
+
+img_data = base64.b64decode(logo_data)
+img = Image.open(io.BytesIO(img_data))
+
+import os
+if not os.path.exists("assets"):
+    os.makedirs("assets")
+img.save("assets/logo.png")
+print("Logo créé dans le dossier assets/")
