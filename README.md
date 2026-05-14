@@ -1,85 +1,177 @@
-# 🚀 Projet Tkinter 2
 
-A modern desktop application developed with Python and Tkinter.
-This project was created to practice GUI development, event handling, and application organization using Python.
+# 🏥 Système de Gestion de Pharmacie(Projet-Tkinter-2)
 
-## 📌 Features
+## 📋 Description
 
-* Modern graphical user interface
-* User-friendly navigation
-* Interactive buttons and forms
-* Data management system
-* Clean and responsive layout
-* Organized project structure
+Application de bureau complète pour la gestion d'une pharmacie. Développée avec **Python** et **Tkinter**, cette solution permet de gérer les produits, les ventes, les clients et de générer des rapports statistiques.
 
-## 🛠️ Technologies Used
+## ✨ Fonctionnalités
 
-* Python
-* Tkinter
-* SQLite 
-* PIL / Pillow 
+### 🛒 Point de Vente
+- Scan par code barre
+- Recherche de produits
+- Panier dynamique
+- Gestion des clients
+- Multiples modes de paiement (Espèces, Carte, Chèque)
 
-## 📷 Screenshots
+### 📦 Gestion des Produits
+- Ajout / Modification / Suppression
+- Code barre automatique
+- Seuil d'alerte stock
+- Date de péremption
+- Recherche multicritères
 
-```md
-![App Screenshot](images/screenshot1.png)
+### 👥 Gestion des Clients
+- Carnet d'adresses complet
+- Ajout / Modification / Suppression
+- Recherche par nom ou téléphone
+
+### 📊 Statistiques
+- Ventes du jour
+- Top 5 des produits
+- Alertes stock faible
+- Alertes expiration
+
+## 🖼️ Captures d'écran
+
+### Écran de Connexion
+```
+[Insérez ici une photo de l'écran de connexion]
 ```
 
-## ⚙️ Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/Aymen5285356/Projet-Tkinter-2.git
+### Interface Principale - Point de Vente
+```
+[Insérez ici une photo de l'interface de vente]
 ```
 
-Go to the project folder:
-
-```bash
-cd Projet-Tkinter-2
+### Gestion des Produits
+```
+[Insérez ici une photo de la gestion des produits]
 ```
 
-Run the application:
-
-```bash
-python main.py
+### Gestion des Clients
+```
+[Insérez ici une photo de la gestion des clients]
 ```
 
-## 📂 Project Structure
+### Statistiques et Alertes
+```
+[Insérez ici une photo des statistiques]
+```
 
-```bash
-Projet-Tkinter-2/
+## 🚀 Installation
+
+### Prérequis
+- Python 3.8 ou supérieur
+- Pip (gestionnaire de paquets Python)
+
+## 🔐 Connexion(par defaut)
+
+| Rôle | Nom d'utilisateur | Mot de passe |
+|------|-------------------|--------------|
+| Administrateur | `admin` | `admin123` |
+
+## 📁 Structure du Projet
+
+```
+gestion_pharmacie/
 │
 ├── main.py
-├── assets/
-├── database/
-├── images/
-├── README.md
-└── requirements.txt
+│            
+├── pharmacie.db         
+│
+├── assets/                
+│   └── logo.png
+│
+└── backups/              
+    └── pharmacie_backup_*.db
 ```
 
-Adapt this tree to your real files. If your repo structure is messy, fix that first instead of hiding it with README cosmetics.
+## 🛠️ Technologies Utilisées
 
-## 🎯 Project Goals
+| Technologie | Usage |
+|-------------|-------|
+| Python 3.11 | Langage principal |
+| Tkinter | Interface graphique |
+| SQLite3 | Base de données locale |
+| Hashlib | Cryptage des mots de passe |
+| Secrets | Génération de sel cryptographique |
+| Datetime | Gestion des dates |
+| Pillow | Gestion des images |
 
-This project helped improve my skills in:
+## 📊 Base de Données
 
-* GUI development with Tkinter
-* Python programming
-* Event-driven programming
-* Application structure and organization
-* Problem solving and debugging
+### Tables
 
-## 🔒 About the Project
+| Table | Description |
+|-------|-------------|
+| `utilisateurs` | Gestion des comptes (admin/pharmacien/stagiaire) |
+| `produits` | Catalogue des produits médicaux |
+| `clients` | Carnet d'adresses des clients |
+| `ventes` | En-têtes des factures |
+| `vente_details` | Lignes des factures |
 
-This project was developed for educational purposes and personal practice in desktop application development.
+### Relations
+```
+ventes (1) ────── (n) vente_details
+vente_details (n) ────── (1) produits
+ventes (n) ────── (1) clients
+```
 
-## 👨‍💻 Author
+## 🎨 Palette de Couleurs
 
-* First-year Digital Development student
-* Passionate about Python, Cybersecurity, and Software Development
+| Élément | Couleur | Code Hex |
+|---------|---------|----------|
+| Fond principal | Gris clair | `#F2F2F2` |
+| Fond des sections | Blanc | `#FFFFFF` |
+| Bouton principal | Bleu | `#2E86C1` |
+| Bouton danger | Rouge | `#C0392B` |
+| Bouton succès | Vert | `#27AE60` |
+| Texte principal | Gris foncé | `#333333` |
 
-## ⭐ Support
+## 🔧 Utilisation
 
-If you like this project, feel free to star the repository.
+### Ajouter un produit
+1. Allez dans l'onglet **"📦 Produits"**
+2. Remplissez le formulaire
+3. Cliquez sur **"Ajouter"**
 
+### Effectuer une vente
+1. Allez dans l'onglet **"🛒 Vente"**
+2. Scannez le code barre ou recherchez un produit
+3. Sélectionnez un client (optionnel)
+4. Cliquez sur **"Valider"**
+
+### Consulter les statistiques
+1. Allez dans l'onglet **"📊 Stats"**
+2. Les ventes du jour et le top 5 s'affichent automatiquement
+
+## ⚠️ Alertes Automatiques
+
+- ✅ **Stock faible** : alerte quand quantité ≤ seuil
+- ✅ **Expiration proche** : alerte à 30 jours de la péremption
+- ✅ Affichage dans l'onglet Statistiques
+
+## 📈 Évolutions Possibles
+
+- [ ] Génération de factures PDF
+- [ ] Export Excel des rapports
+- [ ] Sauvegarde/Restauration automatique
+- [ ] Mode sombre/clair
+- [ ] Impression de reçus
+- [ ] Graphiques avec Matplotlib
+- [ ] Notifications push
+
+## 👨‍💻 Auteur
+
+**Développé dans le cadre d'un projet de formation**
+
+- Filière : Développement Digital
+- Niveau : 1ère année
+- Année : 2025/2026
+
+---
+
+## ⭐ Si vous aimez ce projet
+
+N'hésitez pas à ⭐ le dépôt GitHub et à le partager !
