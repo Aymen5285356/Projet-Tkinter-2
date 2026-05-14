@@ -36,27 +36,26 @@ Application de bureau complète pour la gestion d'une pharmacie. Développée av
 
 ### Écran de Connexion
 ```
-[Insérez ici une photo de l'écran de connexion]
+![Surface de Projet-tkinter-2 (bibliotheque.app)](log in.png)
 ```
 
 ### Interface Principale - Point de Vente
 ```
-[Insérez ici une photo de l'interface de vente]
+![Surface de Projet tkinter (bibliotheque.app)](Vente.png)
 ```
 
 ### Gestion des Produits
 ```
-[Insérez ici une photo de la gestion des produits]
+![Surface de Projet tkinter (bibliotheque.app)](Produits.png)
 ```
 
 ### Gestion des Clients
 ```
-[Insérez ici une photo de la gestion des clients]
+![Surface de Projet tkinter (bibliotheque.app)](Clients.png)
 ```
 
 ### Statistiques et Alertes
-```
-[Insérez ici une photo des statistiques]
+```![Surface de Projet tkinter (bibliotheque.app)](Stats.png)
 ```
 
 ## 🚀 Installation
