@@ -36,34 +36,36 @@ Application de bureau complète pour la gestion d'une pharmacie. Développée av
 
 ### Écran de Connexion
 
-![Surface de Projet-tkinter-2 (gestionnaire_pharmacie.app)](log in.png)
-```
+![Surface de Projet-tkinter-2 (gestionnaire_pharmacie.app)](log-in.png)
 
 ### Interface Principale - Point de Vente
-```
+
 ![Surface de Projet-tkinter-2 (gestionnaire_pharmacie.app)](Vente.png)
-```
+
 
 ### Gestion des Produits
-```
+
 ![Surface de Projet-tkinter-2 (gestionnaire_pharmacie.app)](Produits.png)
-```
+
 
 ### Gestion des Clients
-```
+
 ![Surface de Projet-tkinter-2 (gestionnaire_pharmacie.app)](Clients.png)
-```
+
 
 ### Statistiques et Alertes
-```
+
 ![Surface de Projet-tkinter-2 (gestionnaire_pharmacie.app)](Stats.png)
-```
 
-## 🚀 Installation
 
-### Prérequis
+### 🚀 Installation
+
+## Prérequis
+
 - Python 3.8 ou supérieur
 - Pip (gestionnaire de paquets Python)
+
+---
 
 ## 🔐 Connexion(par defaut)
 
@@ -71,20 +73,37 @@ Application de bureau complète pour la gestion d'une pharmacie. Développée av
 |------|-------------------|--------------|
 | Administrateur | `admin` | `admin123` |
 
+---
+
 ## 📁 Structure du Projet
 
 ```
 gestion_pharmacie/
-│
 ├── main.py
-│            
-├── pharmacie.db         
-│
-├── assets/                
-│   └── logo.png
-│
-└── backups/              
-    └── pharmacie_backup_*.db
+├── database.py
+├── auth.py
+├── config.py
+├── models/
+│   ├── produit.py
+│   ├── client.py
+│   ├── vente.py
+│   └── utilisateur.py
+├── gui/
+│   ├── login_window.py
+│   ├── main_window.py
+│   ├── gestion_produits.py
+│   ├── point_vente.py
+│   ├── gestion_clients.py
+│   ├── rapports.py
+│   └── parametres.py
+├── utils/
+│   ├── generate_barcode.py
+│   ├── print_receipt.py
+│   ├── export_pdf.py
+│   └── backup.py
+├── assets/
+│   ├── logo.png
+└── pharmacie.db
 ```
 
 ## 🛠️ Technologies Utilisées
